@@ -11,6 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pokedex Application',
+      // initialRoute: "/",
+      // routes: {
+      //   "/" : (context) => ListPkmPage(),
+      // },
       home: ListPkmPage(),
     );
   }
