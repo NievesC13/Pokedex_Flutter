@@ -18,60 +18,59 @@ class _ListPkmPageState extends State<ListPkmPage> {
             //Visualizar la lista de Pokemon's
             Flexible(
               flex: 1,
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 1),
-                              color: const Color.fromARGB(255, 9, 17, 81),
-                            ),
-                            width: 30,
-                            height: 30,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.white, width: 1),
+                            color: const Color.fromARGB(255, 9, 17, 81),
                           ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white, width: 1),
-                              color: const Color.fromARGB(255, 9, 17, 81),
-                            ),
-                            width: 15,
-                            height: 15,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 3,
-                      ),
-                      Expanded(
-                        child: Container(
-                          color: const Color.fromARGB(255, 195, 120, 120),
+                          width: 30,
+                          height: 30,
                         ),
-                      )
-                    ],
-                  ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.white, width: 1),
+                            color: const Color.fromARGB(255, 9, 17, 81),
+                          ),
+                          width: 15,
+                          height: 15,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: const Color.fromARGB(255, 195, 120, 120),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
             //Visualizar la pokeball para hacer scroll
             Flexible(
               flex: 1,
-              //Forma de pokeball
-              child: Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white, width: 2),
                     color: const Color.fromARGB(255, 195, 120, 120),
                   ),
+                  child: Image.asset('assets/pokeball.png'),
                 ),
               ),
             ),
