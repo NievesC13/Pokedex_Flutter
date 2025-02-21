@@ -59,13 +59,12 @@ class _ListPkmPageState extends State<ListPkmPage> {
                     ],
                   ),
                 ),
-                color: Colors.red,
               ),
             ),
             //Visualizar la pokeball para hacer scroll
             Flexible(
               flex: 1,
-              //Forma de pokeball 
+              //Forma de pokeball
               child: Expanded(
                 child: Container(
                   decoration: BoxDecoration(
