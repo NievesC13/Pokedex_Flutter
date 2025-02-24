@@ -50,6 +50,7 @@ class _ListPkmPageState extends State<ListPkmPage> {
                     SizedBox(
                       height: 3,
                     ),
+                    //Lista de Pokemon's
                     Expanded(
                       child: Container(
                         color: const Color.fromARGB(255, 195, 120, 120),
