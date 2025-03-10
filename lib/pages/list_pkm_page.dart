@@ -124,55 +124,94 @@ class _ListPkmPageState extends State<ListPkmPage> {
                               width: double.infinity,
                               color: Colors.grey[300],
                               child: Center(
-                                child: _isLoading
-                                    ? CircularProgressIndicator(
-                                        color: Colors.red,
-                                      )
-                                    : // Lista de Pokemon's
-                                    Padding(
-                                        padding:
-                                            const EdgeInsets.only(top: 150),
-                                        child: ListView.builder(
-                                          shrinkWrap: true,
-                                          itemCount: _pokemonList.length,
-                                          itemBuilder: (context, index) {
-                                            final pokemon = _pokemonList[index];
-                                            String uriPokemon = pokemon['url'];
+                                  child: _isLoading
+                                      ? CircularProgressIndicator(
+                                          color: Colors.red,
+                                        )
+                                      : // Lista de Pokemon's
+                                      // ListView.builder(
+                                      //   shrinkWrap: true,
+                                      //   itemCount: _pokemonList.length,
+                                      //   itemBuilder: (context, index) {
+                                      //     final pokemon = _pokemonList[index];
+                                      //     String uriPokemon = pokemon['url'];
 
-                                            debugPrint(uriPokemon.toString());
-                                            return ListTile(
-                                              title: Align(
-                                                alignment:
-                                                    Alignment.centerRight,
-                                                child: Card(
-                                                  elevation: 5,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
-                                                  ),
-                                                  color: Colors.white,
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                      horizontal: 20.0,
-                                                      vertical: 5,
+                                      //     debugPrint(uriPokemon.toString());
+                                      //     return ListTile(
+                                      //       title: Align(
+                                      //         alignment:
+                                      //             Alignment.centerRight,
+                                      // child: Card(
+                                      //   elevation: 5,
+                                      //   shape: RoundedRectangleBorder(
+                                      //     borderRadius:
+                                      //         BorderRadius.circular(
+                                      //             30),
+                                      //   ),
+                                      //   color: Colors.white,
+                                      //   child: Padding(
+                                      //     padding:
+                                      //         EdgeInsets.symmetric(
+                                      //       horizontal: 20.0,
+                                      //       vertical: 5,
+                                      //     ),
+                                      //     child: Column(
+                                      //       children: [
+                                      //         Text(
+                                      //           pokemon['name'],
+                                      //         ),
+                                      //       ],
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      // ),
+                                      //     );
+                                      //   },
+                                      // ),
+
+                                      CustomScrollView(
+                                          slivers: [
+                                            SliverList(
+                                              delegate:
+                                                  SliverChildBuilderDelegate(
+                                                (context, index) {
+                                                  final pokemon =
+                                                      _pokemonList[index];
+                                                  String uriPokemon =
+                                                      pokemon['url'];
+                                                  
+
+                                                  debugPrint(
+                                                      uriPokemon.toString());
+                                                  return Card(
+                                                    elevation: 5,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30),
                                                     ),
-                                                    child: Column(
-                                                      children: [
-                                                        Text(
-                                                          pokemon['name'],
-                                                        ),
-                                                      ],
+                                                    color: Colors.white,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                        horizontal: 20.0,
+                                                        vertical: 5,
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            pokemon['name'],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                ),
+                                                  );
+                                                },
                                               ),
-                                            );
-                                          },
-                                        ),
-                                      ),
-                              ),
+                                            )
+                                          ],
+                                        )),
                             ),
                           ),
                         ),
